@@ -8,11 +8,11 @@
 
 ### User
 
-<img src="https://github.com/our-sopt-server-5/oranz/blob/master/homework5/image/회원가입.png" alt="회원가입" style="zoom:67%;" />
+<img src="https://github.com/our-sopt-server-5/oranz/blob/master/homework5/image/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.png" alt="회원가입" style="zoom:67%;" />
 
 회원가입
 
-<img src="https://github.com/our-sopt-server-5/oranz/blob/master/homework5/image/로그인.png" alt="로그인" style="zoom:67%;" />
+<img src="https://github.com/our-sopt-server-5/oranz/blob/master/homework5/image/%EB%A1%9C%EA%B7%B8%EC%9D%B8.png" alt="로그인" style="zoom:67%;" />
 
 로그인
 
