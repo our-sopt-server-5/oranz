@@ -1,5 +1,7 @@
+const moment = require('moment');
 const util = require('../modules/util');
-const Post = require("../models/post")
+const jwt = require('../modules/jwt');
+const Post = require("../models/post");
 const statusCode = require('../modules/statusCode');
 const resMessage = require('../modules/responseMessage');
 
@@ -28,15 +30,16 @@ const blog = {
 
     write: async(req, res) => {
         const {author, title, content} = req.body;
+        const userIdx = req.decoded.idx;
         // NULL Value Error handling
-        if (!author || !title || !content) {
+        if (!author || !title || !content || !userIdx) {
             res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, resMessage.NULL_VALUE));
             return;
         }
         const now = moment();
         const created_at = await now.format('YYYY-MM-DD HH:MM:SS');
         const idx = (await Post.getLastIdx()) + 1;
-        const newIdx = await Post.createPost(idx, author, title, content, created_at);
+        const newIdx = await Post.createPost(idx, author, title, content, created_at, userIdx);
         res.status(statusCode.OK).send(util.success(statusCode.OK, resMessage.WRITE_SUCCESS, {idx: newIdx}));
     },
 

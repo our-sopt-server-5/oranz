@@ -16,7 +16,6 @@ const authUtil = {
             return res.json(util.fail(CODE.BAD_REQUEST, MSG.EMPTY_TOKEN));
         }
         const user =  await jwt.verify(token);
-        console.log(user);
         if (user === TOKEN_EXPIRED) {
             return res.json(util.fail(CODE.UNAUTHORIZED, MSG.EXPIRED_TOKEN));
         }
@@ -24,7 +23,6 @@ const authUtil = {
             return res.json(util.fail(CODE.UNAUTHORIZED, MSG.INVALID_TOKEN));
         }
         if (user.idx === undefined) {
-            console.log("저기");
             return res.json(util.fail(CODE.UNAUTHORIZED, MSG.INVALID_TOKEN));
         }
         req.decoded = user;

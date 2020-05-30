@@ -17,10 +17,10 @@ const post = {
         }
     },
 
-    createPost: async (idx, author, title, content, created_at) => {
-        const fields = 'idx, author, title, content, created_at';
-        const questions = `?, ?, ?, ?, ?`;
-        const values = [idx, author, title, content, created_at];
+    createPost: async (idx, author, title, content, created_at, userIdx) => {
+        const fields = 'idx, author, title, content, created_at, userIdx';
+        const questions = `?, ?, ?, ?, ?, ?`;
+        const values = [idx, author, title, content, created_at, userIdx];
         const query = `INSERT INTO ${table}(${fields}) VALUES(${questions})`;
         try {
             const result = await pool.queryParamArr(query, values);
