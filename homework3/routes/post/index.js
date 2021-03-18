@@ -6,6 +6,9 @@ let statusCode = require('../../modules/statusCode');
 let resMessage = require('../../modules/responseMessage');
 var moment = require("moment");
 
+console.log(moment());
+console.log(typeof(moment().format('YYYY-MM-DD')));
+
 router.get("/:idx", async (req, res) => {
     const idx = req.params.idx;
     // NULL Value Error handling
